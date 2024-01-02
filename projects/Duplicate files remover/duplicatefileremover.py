@@ -27,18 +27,18 @@ if __name__ == "__main__":
 
     # List to store deleted files
     deletedFiles = []
-    filelist = [f for f in os.listdir() if os.path.isfile(os.path.join('C:/drivers', f))]
-    for f in filelist:
-        key = hashFile(f)
-        # If key already exists, it deletes the file
-        if key in hashMap.keys():
-            deletedFiles.append(f)
-            os.remove(f)
-        else:
-            hashMap[key] = f
-    if len(deletedFiles) != 0:
-        print('Deleted Files')
-        for i in deletedFiles:
-            print(i)
+filelist = [f for f in os.listdir('C:/Users/jacob/Downloads') if os.path.isfile(os.path.join('C:/Users/jacob/Downloads', f))]
+for f in filelist:
+    key = hashFile(f)
+    # If key already exists, it deletes the file
+    if key in hashMap.keys():
+        deletedFiles.append(f)
+        os.remove(f)
     else:
-        print('No duplicate files found')
+        hashMap[key] = f
+if len(deletedFiles) != 0:
+    print('Deleted Files')
+    for i in deletedFiles:
+        print(i)
+else:
+    print('No duplicate files found')
