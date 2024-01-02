@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     # List to store deleted files
     deletedFiles = []
-    filelist = [f for f in os.listdir('C:/Users/jacob/Downloads/') if os.path.isfile(f)]
+    filelist = [f for f in os.listdir('C:/Users/jacob/') if os.path.isfile(f)]
     for f in filelist:
         key = hashFile(f)
         # If key already exists, it deletes the file
