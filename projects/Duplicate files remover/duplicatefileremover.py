@@ -1,5 +1,7 @@
 import hashlib
 import os
+import pytest  # noqa: F401
+
 # Remove the import statement for hashlib since it is already imported above
 # import hashlib
 
@@ -25,7 +27,7 @@ if __name__ == "__main__":
 
     # List to store deleted files
     deletedFiles = []
-    filelist = [f for f in os.listdir('C:/Users/jacob/') if os.path.isfile(f)]
+    filelist = [f for f in os.listdir('C:/drivers') if os.path.isfile(f)]
     for f in filelist:
         key = hashFile(f)
         # If key already exists, it deletes the file
